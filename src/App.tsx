@@ -1,18 +1,20 @@
-import './App.css'
-import styled from "styled-components";
+import './App.css';
+import { Header } from './layout/header/Header';
+import {Main} from "./layout/section/main/Main.tsx";
+import {Tech} from "./layout/section/tech/Tech.tsx";
+import {Projects} from "./layout/section/projects/Projects.tsx";
+import {Contacts} from "./layout/section/contact/Contacts.tsx";
 
 function App() {
-    return (
-        <div className="App">
-            <Title>Welcome to IT-INCUBATOR</Title>
-        </div>
-    )
+  return (
+    <div className="App">
+      <Header />
+        <Main/>
+        <Tech/>
+      <Projects/>
+        <Contacts/>
+    </div>
+  );
 }
 
-export default App
-
-const Title = styled.h1`
-    font-size: 1.5em;
-    text-align: center;
-    color: #e91e63;
-`;
+export default App;
