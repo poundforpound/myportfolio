@@ -22,7 +22,7 @@ export const Contacts = () => {
 
 const StyledContact = styled.section`
 background-color: #1a1a1a;
-    min-height: 50vh;
+    //min-height: 50vh;
     
 `
 

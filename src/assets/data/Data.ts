@@ -65,3 +65,5 @@ export const projectList: Array<{ img: string, title: string, description: strin
 ]
 
 export const projectListMenu:Array<string>=["All","Landing Page","React","Spa"]
+
+export const socialIconList: Array<string>=["instagram","linkedin","telegram","vk"]
