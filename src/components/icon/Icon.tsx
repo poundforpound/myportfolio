@@ -5,6 +5,7 @@ type IconProps = {
   width?: string;
   height?: string;
   viewBox?: string;
+  fill?: string;
 };
 
 export const Icon: React.FC<IconProps> = (props: IconProps) => {
@@ -13,7 +14,7 @@ export const Icon: React.FC<IconProps> = (props: IconProps) => {
       width={props.width || '50'}
       height={props.height || '50'}
       viewBox={props.viewBox || '0 0 120 120'}
-      fill="none"
+      fill={props.fill || 'currentColor'}
       xmlns="http://www.w3.org/2000/svg">
       <use xlinkHref={`${iconsSprite}#${props.iconId}`}></use>
     </svg>
