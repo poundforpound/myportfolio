@@ -3,6 +3,7 @@ import { FlexWrapper } from '../../../components/FlexWrapper.ts';
 import styled from 'styled-components';
 import avatar from '../../../assets/images/avatar.webp';
 import abstract from '../../../assets/images/Abstract.png';
+import { theme } from '../../../styles/Themes.styles.ts';
 
 export const Main = () => {
   return (
@@ -12,7 +13,7 @@ export const Main = () => {
           <MainInfo>
             <span>Hi 👋, </span>
             <MainIntroduction>My name is</MainIntroduction>
-            <MainName>Dmitriy</MainName>
+            <MainName>Dmitriy Alekseenkov</MainName>
             <MainTitle>I'm a WebDeveloper</MainTitle>
           </MainInfo>
           <PhotoWrapper>
@@ -25,11 +26,8 @@ export const Main = () => {
 };
 
 const StyledMain = styled.section`
-  height: 100vh;
-
-  ${Container} {
-    height: 100%;
-  }
+  min-height: 100vh;
+  display: flex;
 `;
 
 const MainInfo = styled.div`
@@ -42,10 +40,24 @@ const MainInfo = styled.div`
 
 const MainIntroduction = styled.h2`
   font-size: 60px;
+  margin: 10px 0;
 `;
 
 const MainName = styled.h2`
   font-size: 60px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 0;
+  &::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background-color: ${theme.colors.accent};
+    bottom: 0;
+    z-index: -1;
+  }
 `;
 
 const MainTitle = styled.h1`

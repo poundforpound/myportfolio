@@ -13,10 +13,11 @@ export const Projects = () => {
       <Container>
         <SectionTitle title={'Projects'} subtitle={"Things I've built so far"} />
         <MenuProjects />
-        <GridWrapper columns={3} gap={50}>
-          {projectList.map((project) => {
+        <GridWrapper $columns={3} $gap={50}>
+          {projectList.map((project, i) => {
             return (
               <Project
+                key={i}
                 img={project.img}
                 title={project.title}
                 description={project.description}

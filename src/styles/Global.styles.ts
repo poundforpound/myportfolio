@@ -18,6 +18,8 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+	color: ${theme.colors.font};
+	line-height: 1.2;
 }
 
 ul{
@@ -31,6 +33,10 @@ list-style:none;
 		cursor: pointer;
 		border: none;
 		background-color: unset;
+	}
+
+	section{
+		padding: 100px 0;
 	}
 
 	section:nth-of-type(odd){

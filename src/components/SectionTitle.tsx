@@ -13,13 +13,31 @@ export const SectionTitle = (props: { title: string; subtitle?: string }) => {
 };
 
 const StyledSectionTitle = styled.h2`
-  color: ${theme.colors.font};
+  font-weight: bold;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 48px;
   text-align: center;
+  letter-spacing: 3px;
+  position: relative;
+  margin: 35px 0;
+  &::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    height: 2px;
+    background-color: ${theme.colors.accent};
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 const SectionSubTitle = styled.h3`
-  color: ${theme.colors.font};
+  font-weight: bold;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 3px;
   font-size: 32px;
   text-align: center;
+  margin-bottom: 40px;
 `;
