@@ -1,4 +1,3 @@
-import { projectList } from './../assets/data/Data';
 import { createGlobalStyle } from 'styled-components';
 import { theme } from './Themes.styles';
 
@@ -28,11 +27,14 @@ list-style:none;
 
 	a{
 	text-decoration: none;
+	color:${theme.colors.font};
+	cursor: pointer;
 	}
 	button{
 		cursor: pointer;
 		border: none;
 		background-color: unset;
+		color:${theme.colors.font}
 	}
 
 	section{
@@ -45,4 +47,11 @@ list-style:none;
 		section:nth-of-type(even){
 		background-color: ${theme.colors.secondaryBg};
 	}
+		p{
+		font-size:14px;
+		}
+		button{
+		color:${theme.colors.font};
+
+		}
 `;

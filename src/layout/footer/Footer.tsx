@@ -10,13 +10,13 @@ export const Footer = () => {
   return (
     <StyledFooter>
       <Container>
-        <FlexWrapper direction={'column'} align={'center'} justify={'center'}>
+        <FlexWrapper direction={'column'} align={'center'} justify={'space-between'}>
           <FooterName>Dmitriy</FooterName>
           <SocialList>
             {socialIconList.map((item, i) => (
               <SocialItem key={i}>
                 <SocialLink>
-                  <Icon iconId={item} height={'21px'} width={'21px'} viewBox={'0 0 21 21'} />
+                  <Icon iconId={item} height={'21'} width={'21'} viewBox={'0 0 21 21'} />
                 </SocialLink>
               </SocialItem>
             ))}
@@ -30,22 +30,41 @@ export const Footer = () => {
 
 const StyledFooter = styled.footer`
   background-color: ${theme.colors.secondaryBg};
+  padding: 40px 0;
 `;
 
 const FooterName = styled.span`
-  color: #cccccc;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 24px;
 `;
 
 const SocialList = styled.ul`
   display: flex;
   gap: 30px;
+  margin: 20px 0;
 `;
 
 const SocialItem = styled.li``;
+
 const SocialLink = styled.a`
   display: flex;
-  color: red;
+  color: ${theme.colors.accent};
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    color: ${theme.colors.primaryBg};
+    transform: translateY(-4px);
+  }
 `;
 
-const Copyright = styled.small``;
+const Copyright = styled.small`
+  font-size: 12px;
+  text-align: center;
+  font-weight: 400;
+  opacity: 0.5;
+`;

@@ -1,44 +1,32 @@
 import React from 'react';
-import styled from "styled-components";
-import {projectListMenu} from "../../../../assets/data/Data.ts";
+import styled from 'styled-components';
+import { projectListMenu } from '../../../../assets/data/Data.ts';
+import { Link } from '../../../../components/Link.ts';
 
 export const MenuProjects = () => {
-    return (
-        <StyledMenuProject>
-                <ul>
-                    {projectListMenu.map((item,i) => {
-                        return (
-                            <LinkItem key={i}>
-                               <a href="#">
-                                   {item}
-                               </a>
-                            </LinkItem>
-                        )
-                    })}
-                </ul>
-        </StyledMenuProject>
-    );
+  return (
+    <StyledMenuProject>
+      <ul>
+        {projectListMenu.map((item, i) => {
+          return (
+            <LinkItem key={i}>
+              <Link href="#">{item}</Link>
+            </LinkItem>
+          );
+        })}
+      </ul>
+    </StyledMenuProject>
+  );
 };
 
-const LinkItem = styled.li`
-    a{
-text-transform: uppercase;
-        color: #a6a6a6
-    }
-
-`
-
+const LinkItem = styled.li``;
 
 const StyledMenuProject = styled.nav`
-    margin-bottom: 30px;
-    ul{
-display: flex;
+  margin-bottom: 30px;
+  ul {
+    gap: 30px;
+    display: flex;
     justify-content: center;
-        align-items: center;
-        ${LinkItem}:not(:first-child){
-            margin-left: 60px;
-        }
-               
-    }
-`
-
+    align-items: center;
+  }
+`;
