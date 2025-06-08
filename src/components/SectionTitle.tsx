@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { FlexWrapper } from './FlexWrapper.ts';
 import { theme } from '../styles/Themes.styles.ts';
+import {font} from "../styles/Common.ts";
 
-export const SectionTitle = (props: { title: string; subtitle?: string }) => {
+export const SectionTitle:React.FC<{title:string,subtitle?:string}>= (props: { title: string; subtitle?: string }) => {
   return (
     <FlexWrapper direction="column" justify="space-between" align={'center'}>
       <StyledSectionTitle>{props.title}</StyledSectionTitle>
@@ -13,13 +14,11 @@ export const SectionTitle = (props: { title: string; subtitle?: string }) => {
 };
 
 const StyledSectionTitle = styled.h2`
-  font-weight: bold;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 48px;
+    ${font({family:"'Josefin Sans', sans-serif",weight:700,Fmin:30,Fmax:48})};
   text-align: center;
   letter-spacing: 3px;
   position: relative;
-  margin: 35px 0;
+  margin: 45px 0;
   &::before {
     content: '';
     position: absolute;
@@ -34,10 +33,7 @@ const StyledSectionTitle = styled.h2`
 `;
 
 const SectionSubTitle = styled.h3`
-  font-weight: bold;
-  font-family: 'Josefin Sans', sans-serif;
-  letter-spacing: 3px;
-  font-size: 32px;
+    ${font({family:"'Josefin Sans', sans-serif",weight:700,Fmin:24,Fmax:42,lineHeight:36})};
   text-align: center;
   margin-bottom: 40px;
 `;

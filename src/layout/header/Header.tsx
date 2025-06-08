@@ -1,40 +1,38 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, {useEffect, useState} from 'react';
 import { Logo } from '../../components/logo/Logo.tsx';
-import { HeaderMenu } from './headerMenu/menu/HeaderMenu.tsx';
-import { SocialGroup } from '../../components/socialGroup/SocialGroup.tsx';
 import { Container } from '../../components/Container.ts';
 import { FlexWrapper } from '../../components/FlexWrapper.ts';
-import { theme } from '../../styles/Themes.styles.ts';
+import { S } from './Header_Styles.ts';
+import {MobileMenu} from "./headerMenu/mobileMenu/MobileMenu.tsx";
+import {DesktopMenu} from "./headerMenu/desktopMenu/DesktopMenu.tsx";
+
+
+
 
 export const Header: React.FC = () => {
+const [currentWidth,setCurrentWidth] = useState(window.innerWidth);
+const breakpoint = 768;
+    useEffect(() => {
+        const handleWindowResize =()=>  setCurrentWidth(window.innerWidth);
+        window.addEventListener('resize',handleWindowResize);
+        return()=> window.removeEventListener('resize',handleWindowResize);
+
+    }, []);
   return (
-    <StyledHeader>
+    <S.Header>
       <Container>
         <FlexWrapper justify={'space-between'}>
           <Logo />
-          <InfoHeader>
-            <HeaderMenu />
-            <SocialGroup />
-          </InfoHeader>
+            {currentWidth>breakpoint
+                ?<DesktopMenu/>
+                :<MobileMenu/>
+            }
         </FlexWrapper>
       </Container>
-    </StyledHeader>
+    </S.Header>
   );
 };
 
-const StyledHeader = styled.header`
-  background: rgba(31, 31, 32, 0.9);
-  padding: 20px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99999;
-`;
 
-const InfoHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-`;
+
+

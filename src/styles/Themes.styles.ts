@@ -8,4 +8,10 @@ export const theme = {
 
     placeholderColor: '#495057',
   },
+
+  media:{
+    desktop: ' screen and (max-width: 1024px)',
+    tablet:'screen and (max-width: 768px)',
+    mobile:'screen and (max-width: 576px)',
+  }
 };

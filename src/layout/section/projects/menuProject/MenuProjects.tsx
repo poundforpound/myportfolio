@@ -1,32 +1,24 @@
 import React from 'react';
-import styled from 'styled-components';
+
 import { projectListMenu } from '../../../../assets/data/Data.ts';
 import { Link } from '../../../../components/Link.ts';
+import { S } from './MenuProject_Styles.ts';
 
-export const MenuProjects = () => {
+
+export const MenuProjects:React.FC = () => {
   return (
-    <StyledMenuProject>
+    <S.StyledMenuProject>
       <ul>
         {projectListMenu.map((item, i) => {
           return (
-            <LinkItem key={i}>
+            <S.LinkItem key={i}>
               <Link href="#">{item}</Link>
-            </LinkItem>
+            </S.LinkItem>
           );
         })}
       </ul>
-    </StyledMenuProject>
+    </S.StyledMenuProject>
   );
 };
 
-const LinkItem = styled.li``;
 
-const StyledMenuProject = styled.nav`
-  margin-bottom: 30px;
-  ul {
-    gap: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`;

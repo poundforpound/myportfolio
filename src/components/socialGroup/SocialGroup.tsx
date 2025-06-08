@@ -3,10 +3,10 @@ import {Icon} from "../icon/Icon.tsx";
 import styled from "styled-components";
 import {FlexWrapper} from "../FlexWrapper.ts";
 
-export const SocialGroup = () => {
+export const SocialGroup:React.FC = () => {
     return (
         <SocialGroupStyled>
-            <FlexWrapper justify={"space-between"} gap={50} align={"center"} height={100}>
+            <FlexWrapper justify={"space-between"} gap={50} align={"center"}>
                 <SocialLink href="#">
                     <Icon iconId={"gitFull"} width={"30"} height={"30"} viewBox={"0 0 30 30"}/>
                 </SocialLink>
@@ -21,9 +21,6 @@ export const SocialGroup = () => {
     );
 };
 
-const SocialGroupStyled = styled.div`
-
-`
-
+const SocialGroupStyled = styled.div``
 const SocialLink = styled.a``
 

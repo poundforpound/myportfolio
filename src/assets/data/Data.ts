@@ -28,19 +28,19 @@ export const menuHeaderList: Array<{ title: string; href: string }> = [
   },
 ];
 
-export const techList: Array<string> = [
-  'html',
-  'css',
-  'js',
-  'react',
-  'redux',
-  'bootstrap',
-  'tailwind',
-  'sass',
-  'git',
-  'greensock',
-  'vsCode',
-  'githubFill',
+export const techList: Array<{iconName:string, viewBox?:string}> = [
+  {iconName:'html',viewBox:'0 0 112 122'},
+  {iconName: 'css',},
+  {iconName: 'js',},
+  {iconName: 'react',viewBox:'0 0 110 120'},
+  {iconName: 'redux',viewBox:'0 0 105 120'},
+  {iconName: 'bootstrap',viewBox:'-10 -10 110 115'},
+  {iconName: 'tailwind',viewBox:'12 12 110 110'},
+  {iconName: 'sass',viewBox:'-5 -5 120 120'},
+  {iconName: 'git',viewBox:'-5 -5 120 120'},
+  {iconName: 'greensock',viewBox:'10 0 120 120'},
+  {iconName: 'vsCode',},
+  {iconName: 'githubFill',viewBox:'-15 -15 120 120'},
 ];
 
 export const projectList: Array<{
@@ -53,7 +53,7 @@ export const projectList: Array<{
     img: proj1,
     title: 'Project Tile goes here',
     description:
-      'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
+      'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content ',
     stack: 'HTML , JavaScript, SASS, React',
   },
   {
