@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import {theme} from "../../../styles/Themes.styles.ts";
 
-export const StyledContact = styled.section``;
+export const StyledContact = styled.section`
+position: relative;
+   
+`
 
 export const StyledForm = styled.form`
   display: flex;
@@ -11,6 +14,7 @@ export const StyledForm = styled.form`
   width: 100%;
   gap: 20px;
   margin: 0 auto;
+ 
   textarea {
     resize: none;
     height: 155px;

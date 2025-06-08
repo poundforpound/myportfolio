@@ -4,7 +4,7 @@ import {font} from "../../styles/Common.ts";
 
 export const StyledFooter = styled.footer`
   background-color: ${theme.colors.secondaryBg};
-  padding: 40px 0;
+  padding: 60px 0;
 `;
 
 export const FooterName = styled.span`

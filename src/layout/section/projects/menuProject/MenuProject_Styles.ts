@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {theme} from "../../../../styles/Themes.styles.ts";
+
 
 export const LinkItem = styled.li``;
 
@@ -9,7 +9,6 @@ export const StyledMenuProject = styled.nav`
     justify-content: space-between;
       max-width: 352px;
       width: 100%;
-border: 1px solid ${theme.colors.accent};
       margin: 0 auto 40px;
 `;
 

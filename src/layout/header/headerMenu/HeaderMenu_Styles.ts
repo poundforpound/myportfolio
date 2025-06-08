@@ -1,9 +1,10 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Themes.styles.ts";
+import {Link} from "react-scroll";
 
 
 //Desktop Menu
-const StyledDesktop = styled.div`
+export const StyledDesktop = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 45px;
@@ -75,12 +76,12 @@ export  const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     position: fixed;
     z-index: 99999;
     background-color: rgba(31, 31, 32, 0.9);
-
-  
-    ${props => props.isOpen && css<{ isOpen: boolean }>`
-        display: flex;
         justify-content: center;
         align-items: center;
+    transform: translateY(-100%);
+  
+    ${props => props.isOpen && css<{ isOpen: boolean }>`
+        transform: translateY(0);
     `
 }
     
@@ -114,14 +115,6 @@ export const StyledMenuNav = styled.nav`
     
 `;
 
-
-
-export const Link = styled.a`
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 30px;
-  color: transparent;
-`;
-
 export const Mask = styled.span`
   position: absolute;
   height: 50%;
@@ -139,36 +132,47 @@ export const Mask = styled.span`
   }
 `;
 
+export const NavLink = styled(Link)`
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
+  color: transparent;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        height: 3px;
+        background-color: ${theme.colors.accent};
+
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        right: -10px;
+        z-index: 1;
+
+        transform: scale(0);
+
+    }
+
+    &:hover, &.active {
+        &::before {
+            transform: scale(1);
+        }
+        ${Mask} {
+            transform: skew(12deg) translateX(-5px);
+            color: ${theme.colors.font};
+            & + ${Mask} {
+                transform: skew(12deg) translateX(5px);
+            }
+        }
+    }
+    
+`;
+
+
+
 export const ListItem = styled.li`
   position: relative;
-  &::before {
-    content: '';
-    display: inline-block;
-    height: 3px;
-    background-color: ${theme.colors.accent};
-
-    position: absolute;
-    top: 50%;
-    left: -10px;
-    right: -10px;
-    z-index: 1;
-
-    transform: scale(0);
-
-  }
-
-  &:hover {
-    &::before {
-      transform: scale(1);
-    }
-    ${Mask} {
-      transform: skew(12deg) translateX(-5px);
-      color: ${theme.colors.font};
-      & + ${Mask} {
-        transform: skew(12deg) translateX(5px);
-      }
-    }
-  }
+  
 `;
 
 export const StyledUl= styled.ul`
@@ -183,7 +187,7 @@ export const S={
     MobileMenuPopup,
     StyledMenu,
     StyledMenuNav,
-    Link,
+    NavLink,
     Mask,
     ListItem,
     StyledUl

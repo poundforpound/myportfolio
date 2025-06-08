@@ -3,6 +3,8 @@ import {GridWrapper} from "../../../components/GridWrapper.ts";
 import {theme} from "../../../styles/Themes.styles.ts";
 
 export const StyledTech = styled.section`
+    position: relative;
+}
     ${GridWrapper} {
         
     

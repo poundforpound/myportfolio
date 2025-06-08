@@ -9,7 +9,16 @@ export const Menu:React.FC = () => {
             <S.StyledUl>
                 {menuHeaderList.map((item, i) => (
                     <S.ListItem key={i}>
-                        <S.Link href={item.href}>
+                        <S.NavLink
+                            to={item.href}
+                            smooth={true}
+                            activeClass="active"
+                            spy={true}
+
+                            duration={500}
+
+
+                        >
                             {item.title}
                             <S.Mask>
                                 <span>{item.title}</span>
@@ -17,7 +26,7 @@ export const Menu:React.FC = () => {
                             <S.Mask>
                                 <span>{item.title}</span>
                             </S.Mask>
-                        </S.Link>
+                        </S.NavLink>
                     </S.ListItem>
                 ))}
             </S.StyledUl>

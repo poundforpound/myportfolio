@@ -4,6 +4,7 @@ import {theme} from "../../../styles/Themes.styles.ts";
 import {font} from "../../../styles/Common.ts";
 import abstract from "../../../assets/images/Abstract.png";
 
+
 export const StyledMain = styled.section`
   min-height: 100vh;
   display: flex;
@@ -81,6 +82,9 @@ export const MainName = styled.h2`
 
 export const MainTitle = styled.h1`
   ${font({weight:700,family:"'Josefin Sans',sans-serif",Fmax:60,Fmin:32,lineHeight:32})};
+    p{
+        display:none;
+    }
 `;
 
 export const Photo = styled.img`

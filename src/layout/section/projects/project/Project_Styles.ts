@@ -11,6 +11,7 @@ export const StyledProject = styled.aside`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+    overflow: hidden;
 `;
 
 export const WrapButton = styled.div`
@@ -23,6 +24,7 @@ export const WrapButton = styled.div`
 
 export const ImageWrapper = styled.div`
   position: relative;
+
 
   &::before {
     content: '';

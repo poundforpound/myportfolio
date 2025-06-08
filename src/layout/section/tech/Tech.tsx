@@ -9,7 +9,7 @@ import { S } from './Tech_Styles.ts';
 
 export const Tech:React.FC = () => {
     return (
-        <S.StyledTech>
+        <S.StyledTech id={"techStack"}>
             <Container>
                 <SectionTitle
                     title={'My Tech Stack'}
